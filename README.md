@@ -1,40 +1,68 @@
-# TechFlow Solutions - Sistema de Gerenciamento de Tarefas
+# 🧠 Gerenciador de Tarefas (Projeto Base)
 
-Projeto didático demonstrando fluxo ágil no GitHub: CRUD de tarefas em Flask, testes com PyTest e CI com GitHub Actions.
+Este repositório contém a implementação inicial de um **sistema simples de gerenciamento de tarefas em Python**,
+criado para fins educacionais e demonstração de boas práticas de **Engenharia de Software**
+utilizando **GitHub Projects** e **GitHub Actions (CI)**.
 
-## Execução (local)
-1. Criar e ativar virtualenv
-2. Instalar dependências: `pip install -r app/requirements.txt`
-3. Rodar: `python app/app.py`
+---
 
-## Endpoints
-- GET /tasks
-- GET /tasks/<id>
-- POST /tasks  (json: {"title":"...", "description":"..."})
-- PUT /tasks/<id>
-- DELETE /tasks/<id>
+## 🚀 Funcionalidades Atuais
+
+- Adicionar novas tarefas  
+- Listar tarefas cadastradas  
+- Remover tarefas existentes  
+- Menu interativo no terminal  
+
+> 🔧 O projeto ainda está em desenvolvimento e será expandido gradualmente (ex.: salvar tarefas em arquivo, atualizar tarefas, etc).
+
+---
+
+## 🧩 Estrutura do Projeto
 
 
-Requisitos Funcionais (o que o sistema faz)
 
-O sistema deve permitir adicionar tarefas.
+Trabalho_Software-Engineering_EAD/
+│
+├── .github/
+│ └── workflows/
+│ └── ci.yml # Executa o app automaticamente via GitHub Actions
+│
+├── app/
+│ ├── app.py # Arquivo principal com menu simples
+│ └── tarefas.py # Funções de CRUD (adicionar, listar, remover)
+│
+└── README.md
 
-O sistema deve permitir listar todas as tarefas.
 
-O sistema deve permitir atualizar o nome de uma tarefa existente.
+---
 
-O sistema deve permitir remover uma tarefa.
+## ⚙️ Como Executar Localmente
 
-As tarefas devem ser mantidas enquanto o programa estiver em execução.
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/gustavoazzola76261-arch/Trabalho_Software-Engineering_EAD.git
+   cd Trabalho_Software-Engineering_EAD
 
-⚙️ Requisitos Não Funcionais (como o sistema se comporta)
 
-O código deve ser escrito em Python 3.x.
+Execute o programa:
 
-O programa deve rodar em modo console (CLI).
+python app/app.py
 
-O código deve ser modularizado (funções separadas).
+🚦 Integração Contínua (CI)
 
-O código deve ser validado automaticamente pelo GitHub Actions (CI).
+O projeto utiliza o GitHub Actions para garantir que o código seja executado corretamente a cada push na branch main.
 
-O repositório deve seguir um fluxo organizado com Issues, Branches, e Commits descritivos.
+📈 Próximos Passos
+
+ Implementar atualização de tarefas
+
+ Adicionar persistência (salvar tarefas em arquivo JSON)
+
+ Criar testes automatizados (Pytest)
+
+ Melhorar interface e modularização
+
+👨‍💻 Autor
+
+Gustavo Azzola
+📚 Projeto desenvolvido para estudos e práticas de Engenharia de Software.

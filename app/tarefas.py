@@ -12,3 +12,10 @@ def listar_tarefas():
         print("--- Lista de Tarefas ---")
         for i, tarefa in enumerate(tarefas, start=1):
             print(f"{i}. {tarefa}")
+
+def removerTarefa(indice):
+    if 0<=indice<len(tarefas):
+        removida = tarefas.pop(indice)
+        print(f"Tarefa '{removida}' removida com sucesso.")
+    else:
+        print("Indice invalido")
