@@ -1,19 +1,35 @@
 # tests/test_tasks.py
-from app.tarefas import adicionar_tarefa, listar_tarefas, removerTarefa
+import os
+import sys
 
-def run_tests():
-    print("\n=== Início dos testes ===\n")
+# Adiciona o caminho da pasta 'app' para importar tarefas.py
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-    # Adiciona tarefas
-    adicionar_tarefa("Tarefa 1")
-    adicionar_tarefa("Tarefa 2")
-    listar_tarefas()
+from app.tarefas import carregarTarefas, salvarTarefas, adicionar_tarefa, removerTarefa, ARQUIVO_TAREFAS
 
-    # Remove a primeira tarefa
+def limpar_arquivo():
+    """Remove o arquivo de tarefas antes de cada teste"""
+    if os.path.exists(ARQUIVO_TAREFAS):
+        os.remove(ARQUIVO_TAREFAS)
+
+def test_adicionar_tarefa():
+    limpar_arquivo()
+    adicionar_tarefa("Tarefa de teste")
+    tarefas = carregarTarefas()
+    assert "Tarefa de teste" in tarefas
+    print("✅ test_adicionar_tarefa passou")
+
+def test_remover_tarefa():
+    limpar_arquivo()
+    salvarTarefas(["Tarefa A", "Tarefa B"])
     removerTarefa(0)
-    listar_tarefas()
-
-    print("\n=== Testes concluídos com sucesso ===\n")
+    tarefas = carregarTarefas()
+    assert "Tarefa A" not in tarefas
+    assert "Tarefa B" in tarefas
+    print("✅ test_remover_tarefa passou")
 
 if __name__ == "__main__":
-    run_tests()
+    print("\n=== Início dos testes simples de tarefas ===\n")
+    test_adicionar_tarefa()
+    test_remover_tarefa()
+    print("\n=== Todos os testes passaram! ===\n")

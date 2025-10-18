@@ -21,7 +21,7 @@ def main():
 
         elif opcao == 3:
             try:
-                indice = 1 - int(input("Digite o numero da tarefa que deseja remover: "))
+                indice = int(input("Digite o numero da tarefa que deseja remover: ")) - 1
                 removerTarefa(indice)
             except ValueError:
                 print("Digite um numero valido")

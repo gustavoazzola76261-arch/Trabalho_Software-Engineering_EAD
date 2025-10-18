@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      
+
       - name: Run automated tests
         run: |
           export PYTHONPATH=${PYTHONPATH}:$(pwd)
