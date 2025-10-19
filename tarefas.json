@@ -1,3 +1,7 @@
 ﻿[
-    "Nova tarefa"
+    {
+        "descricao": "Tarefa teste",
+        "concluida": false,
+        "prioridade": "Alta"
+    }
 ]
