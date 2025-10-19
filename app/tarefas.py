@@ -47,8 +47,7 @@ def removerTarefa(indice):
         listar_tarefas() # atualiza a lista de tarefas
 
     else:
-<<<<<<< HEAD
-=======
+
         print("Indice invalido")
 
 def editar_tarefa(indice, nova_descricao):
@@ -62,5 +61,4 @@ def editar_tarefa(indice, nova_descricao):
         salvarTarefas(tarefas)
         print(f"Tarefa '{antiga}' foi atualizada para '{nova_descricao}' com sucesso.")
     else:
->>>>>>> 94c09c7 (Adição da opção de editar tarefas no menu)
         print("Indice invalido")
