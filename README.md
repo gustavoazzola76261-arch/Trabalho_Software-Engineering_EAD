@@ -18,6 +18,21 @@ com **GitHub Projects** e **GitHub Actions (CI)**.
 
 ---
 
+<<<<<<< HEAD
+=======
+## ⚙️ Funcionalidades
+
+- **Adicionar tarefa**  
+- **Listar tarefas**  
+- **Remover tarefa**  
+- **Editar tarefa** ← nova funcionalidade adicionada
+- **Interface simples via terminal (menu interativo)**
+- **Armazenamento em arquivo** `tarefas.json`  
+- **Integração contínua (CI)** via **GitHub Actions**
+
+---
+
+>>>>>>> 94c09c7 (Adição da opção de editar tarefas no menu)
 ## 🧱 Estrutura do Projeto
 
 Trabalho_Software-Engineering_EAD/
@@ -35,9 +50,12 @@ Trabalho_Software-Engineering_EAD/
 │
 └── README.md
 
+<<<<<<< HEAD
 yaml
 Copiar código
 
+=======
+>>>>>>> 94c09c7 (Adição da opção de editar tarefas no menu)
 ---
 
 ## ⚙️ Como Executar o Projeto Localmente
@@ -49,12 +67,20 @@ Copiar código
 Execute o programa:
 
 bash
+<<<<<<< HEAD
 Copiar código
 python app/app.py
 Para rodar os testes:
 
 bash
 Copiar código
+=======
+python app/app.py
+
+Para rodar os testes:
+
+bash
+>>>>>>> 94c09c7 (Adição da opção de editar tarefas no menu)
 pytest tests/test_tasks.py
 🔄 Integração Contínua (CI)
 O repositório usa GitHub Actions para:
