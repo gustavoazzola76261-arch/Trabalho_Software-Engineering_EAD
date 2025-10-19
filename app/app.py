@@ -1,5 +1,7 @@
 # app/app.py
 import time
+
+from tarefas import marcar_concluida
 from tarefas import removerTarefa
 
 from tarefas import adicionar_tarefa, listar_tarefas
@@ -14,7 +16,8 @@ def main():
         print("2 - Listar tarefas")
         print("3 - Remover tarefa")
         print("4 - Editar tarefa")
-        print("5 - Sair")
+        print("5 - Marcar tarefa como conluida")
+        print("6 - Sair")
 
 
         opcao = int(input("Escolha uma opção: "))
@@ -39,6 +42,12 @@ def main():
             except ValueError:
                 print("Digite um numero valido")
         elif opcao == 5:
+            try:
+                indice = int(input("Digite o numero da tarefa: ")) - 1
+                marcar_concluida(indice)
+            except ValueError:
+                print("Digite um numero valido")
+        elif opcao == 6:
             print("Saindo do sistema...")
             break
         else:

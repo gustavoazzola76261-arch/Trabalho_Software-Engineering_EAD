@@ -19,7 +19,7 @@ def salvarTarefas(tarefas):
 
 def adicionar_tarefa(descricao):
     tarefas = carregarTarefas()
-    tarefas.append(descricao)
+    tarefas.append({"descricao" :descricao, "concluida" : False})
     salvarTarefas(tarefas)
     print(f"Tarefa '{descricao}' adicionada com sucesso!")
 
@@ -30,7 +30,8 @@ def listar_tarefas():
         return
     print("\n --- Lista de tarefas ---")
     for i, tarefas in enumerate(tarefas):
-        print(f"{i+1}. {tarefas}")
+        status = "✅" if tarefas["concluida"] else "❌"
+        print(f"{i+1}. [{status}] {tarefas['descricao']}")
 
 
 
@@ -43,7 +44,7 @@ def removerTarefa(indice):
     if 0 <= indice < len (tarefas):
         removida = tarefas.pop(indice)
         salvarTarefas(tarefas)
-        print(f"Tarefa '{removida}' removida com sucesso.")
+        print(f"Tarefa '{removida['descricao']}' removida com sucesso.")
         listar_tarefas() # atualiza a lista de tarefas
 
     else:
@@ -56,9 +57,21 @@ def editar_tarefa(indice, nova_descricao):
         print("Nenhuma tarefa encontrada.")
         return
     if 0 <= indice < len(tarefas):
-        antiga = tarefas[indice]
-        tarefas[indice] = nova_descricao
+        antiga = tarefas[indice]["descricao"]
+        tarefas[indice]["descricao"] = nova_descricao
         salvarTarefas(tarefas)
         print(f"Tarefa '{antiga}' foi atualizada para '{nova_descricao}' com sucesso.")
+    else:
+        print("Indice invalido")
+
+def marcar_concluida(indice):
+    tarefas = carregarTarefas()
+    if not tarefas:
+        print("Nenhuma tarefa encontrada.")
+        return
+    if 0 <= indice < len(tarefas):
+        tarefas[indice]["concluida"] = True
+        salvarTarefas(tarefas)
+        print(f"Tarefa '{tarefas[indice]['descricao']}' marcada como concluida.")
     else:
         print("Indice invalido")

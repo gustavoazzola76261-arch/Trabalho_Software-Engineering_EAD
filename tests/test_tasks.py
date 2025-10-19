@@ -4,7 +4,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from app.tarefas import carregarTarefas, salvarTarefas, adicionar_tarefa, removerTarefa, editar_tarefa, ARQUIVO_TAREFAS
-
+from app.tarefas import marcar_concluida
 def limpar_arquivo():
     if os.path.exists(ARQUIVO_TAREFAS):
         os.remove(ARQUIVO_TAREFAS)
@@ -33,6 +33,15 @@ def test_editar_tarefa():
     assert "Nova tarefa" in tarefas
     assert "Antiga tarefa" not in tarefas
     print("✅ test_editar_tarefa passou")
+
+def test_marcar_concluida():
+    limpar_arquivo()
+    salvarTarefas([{"descricao": "Tarefa teste", "concluida": False}])
+    marcar_concluida(0)
+    tarefas = carregarTarefas()
+    assert tarefas[0]["concluida"] == True
+    print("✅ test_marcar_concluida passou")
+
 
 if __name__ == "__main__":
     print("\n=== Início dos testes simples de tarefas ===\n")

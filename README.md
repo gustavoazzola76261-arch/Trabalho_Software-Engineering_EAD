@@ -1,8 +1,25 @@
+📘 README.md atualizado
 # 📝 Sistema de Gerenciamento de Tarefas (Python)
 
-Este é um projeto simples em **Python** para gerenciar tarefas (CRUD básico), 
+Este é um projeto simples em **Python** para gerenciar tarefas (CRUD completo), 
 criado como parte de um estudo de **Boas Práticas de Engenharia de Software** 
 com **GitHub Projects** e **GitHub Actions (CI)**.
+
+---
+
+## ⚠️ Gestão de Mudanças / Alteração de Escopo
+
+**Alteração:** Implementar campo de **prioridade** para cada tarefa (Baixa, Média ou Alta).  
+
+**Justificativa:**  
+- Permitir ao usuário organizar melhor suas tarefas  
+- Facilitar futuras melhorias, como filtros ou relatórios por prioridade  
+- Demonstrar prática de gestão de mudanças e evolução do projeto  
+
+**Impacto esperado:**  
+- Atualização do CRUD (`tarefas.py`) para suportar prioridade  
+- Atualização do menu (`app.py`) para permitir definir e listar prioridade  
+- Atualização dos testes (`test_tasks.py`) para validar prioridade
 
 ---
 
@@ -11,51 +28,36 @@ com **GitHub Projects** e **GitHub Actions (CI)**.
 - Adicionar tarefas
 - Listar tarefas
 - Remover tarefas
+- Editar tarefas
+- Marcar tarefas como concluídas
 - Interface simples via terminal (menu interativo)
 - Armazenamento em arquivo `tarefas.json`
-- Testes automatizados com **pytest**
+- Testes automatizados
 - Integração contínua (CI) via **GitHub Actions**
 
 ---
 
-<<<<<<< HEAD
-=======
-## ⚙️ Funcionalidades
-
-- **Adicionar tarefa**  
-- **Listar tarefas**  
-- **Remover tarefa**  
-- **Editar tarefa** ← nova funcionalidade adicionada
-- **Interface simples via terminal (menu interativo)**
-- **Armazenamento em arquivo** `tarefas.json`  
-- **Integração contínua (CI)** via **GitHub Actions**
-
----
-
->>>>>>> 94c09c7 (Adição da opção de editar tarefas no menu)
 ## 🧱 Estrutura do Projeto
+
+
 
 Trabalho_Software-Engineering_EAD/
 │
 ├── app/
 │ ├── app.py # Código principal com menu
-│ ├── tarefas.py # Funções do CRUD
+│ └── tarefas.py # Funções do CRUD
 │
 ├── tests/
 │ └── test_tasks.py # Testes automatizados
 │
 ├── .github/
 │ └── workflows/
-│ └── ci.yml # Configuração do CI (executa testes no push)
+│ └── ci.yml # Configuração do CI
 │
+├── tarefas.json # Arquivo onde as tarefas são salvas
 └── README.md
 
-<<<<<<< HEAD
-yaml
-Copiar código
 
-=======
->>>>>>> 94c09c7 (Adição da opção de editar tarefas no menu)
 ---
 
 ## ⚙️ Como Executar o Projeto Localmente
@@ -64,42 +66,36 @@ Copiar código
    ```bash
    git clone https://github.com/gustavoazzola76261-arch/Trabalho_Software-Engineering_EAD.git
    cd Trabalho_Software-Engineering_EAD
+
+
 Execute o programa:
 
-bash
-<<<<<<< HEAD
-Copiar código
-python app/app.py
-Para rodar os testes:
-
-bash
-Copiar código
-=======
 python app/app.py
 
-Para rodar os testes:
 
-bash
->>>>>>> 94c09c7 (Adição da opção de editar tarefas no menu)
-pytest tests/test_tasks.py
+Para rodar os testes automatizados:
+
+python tests/test_tasks.py
+
 🔄 Integração Contínua (CI)
+
 O repositório usa GitHub Actions para:
 
-Configurar ambiente Python 3.x
+Configurar o ambiente Python 3.x
 
-Executar o script principal (app/app.py)
+Rodar os testes unitários automaticamente a cada push
 
-Rodar os testes unitários (pytest)
-
-Validar que o projeto está íntegro a cada push
+Validar que o projeto está íntegro e funcionando
 
 Se o CI passar ✅, o código está estável.
 
 📈 Próximos Passos
-Adicionar campo de status de conclusão nas tarefas (pendente/concluída)
 
-Melhorar cobertura de testes
+Melhorar a interface do menu (cores, separadores)
 
+Adicionar filtros ou relatórios de tarefas
+
+Expandir cobertura de testes para novos cenários
 
 💡 Autor: Gustavo Azzola
 📅 Última atualização: Outubro/2025
