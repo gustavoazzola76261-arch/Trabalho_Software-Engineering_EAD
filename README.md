@@ -1,101 +1,142 @@
-📘 README.md atualizado
-# 📝 Sistema de Gerenciamento de Tarefas (Python)
+🧠 Sistema de Gerenciamento de Tarefas (Python)
 
-Este é um projeto simples em **Python** para gerenciar tarefas (CRUD completo), 
-criado como parte de um estudo de **Boas Práticas de Engenharia de Software** 
-com **GitHub Projects** e **GitHub Actions (CI)**.
+Projeto desenvolvido como parte de um estudo prático de Engenharia de Software, aplicando boas práticas, GitHub Projects (Kanban) e GitHub Actions (CI).
+O sistema realiza um CRUD completo de tarefas, com interface de terminal aprimorada.
 
----
+🚀 Funcionalidades Atuais
 
-## ⚠️ Gestão de Mudanças / Alteração de Escopo
+✅ Adicionar tarefas com prioridade (Baixa, Média, Alta)
 
-**Alteração:** Implementar campo de **prioridade** para cada tarefa (Baixa, Média ou Alta).  
+✅ Listar tarefas com status e prioridade
 
-**Justificativa:**  
-- Permitir ao usuário organizar melhor suas tarefas  
-- Facilitar futuras melhorias, como filtros ou relatórios por prioridade  
-- Demonstrar prática de gestão de mudanças e evolução do projeto  
+✅ Remover tarefas
 
-**Impacto esperado:**  
-- Atualização do CRUD (`tarefas.py`) para suportar prioridade  
-- Atualização do menu (`app.py`) para permitir definir e listar prioridade  
-- Atualização dos testes (`test_tasks.py`) para validar prioridade
+✅ Editar tarefas
 
----
+✅ Marcar tarefas como concluídas
 
-## 🚀 Funcionalidades Atuais
+✅ Editar prioridade de tarefas
 
-- Adicionar tarefas
-- Listar tarefas
-- Remover tarefas
-- Editar tarefas
-- Marcar tarefas como concluídas
-- Interface simples via terminal (menu interativo)
-- Armazenamento em arquivo `tarefas.json`
-- Testes automatizados
-- Integração contínua (CI) via **GitHub Actions**
+✅ Interface aprimorada com cores e separadores no terminal
 
----
+✅ Armazenamento persistente em tarefas.json
 
-## 🧱 Estrutura do Projeto
+✅ Testes automatizados com pytest
 
+✅ Integração Contínua via GitHub Actions
 
+🔄 Gestão de Mudanças (Simulação)
+🧩 Mudança Solicitada:
 
+Melhoria na interface do menu e adição de atributos extras nas tarefas (status e prioridade).
+Ajustes no código, testes e documentação foram feitos para refletir essa evolução.
+
+💡 Justificativa:
+
+Durante a fase de testes e uso, identificou-se a necessidade de uma interface mais amigável e visualmente clara, facilitando a interação via terminal e tornando o sistema mais intuitivo.
+Além disso, foi solicitado o controle de prioridade e status, ampliando o escopo inicial.
+
+⚙️ Ações Realizadas:
+
+Atualização do menu principal (app.py) com cores, ícones e separadores
+
+Adição de campos prioridade e concluída em tarefas.py
+
+Criação de novas funções:
+
+editar_prioridade()
+
+marcar_concluida()
+
+Atualização dos testes (test_tasks.py) para cobrir novas funções
+
+Atualização do README.md e adaptação do Kanban no GitHub Projects
+
+🧱 Estrutura do Projeto
 Trabalho_Software-Engineering_EAD/
 │
 ├── app/
-│ ├── app.py # Código principal com menu
-│ └── tarefas.py # Funções do CRUD
+│   ├── app.py              # Menu principal com interface colorida
+│   ├── tarefas.py          # Funções CRUD e controle de status/prioridade
 │
 ├── tests/
-│ └── test_tasks.py # Testes automatizados
+│   └── test_tasks.py       # Testes automatizados
 │
 ├── .github/
-│ └── workflows/
-│ └── ci.yml # Configuração do CI
+│   └── workflows/
+│       └── ci.yml          # Integração contínua (executa testes)
 │
-├── tarefas.json # Arquivo onde as tarefas são salvas
+├── tarefas.json            # Banco de dados local (gerado automaticamente)
+│
 └── README.md
 
-
----
-
-## ⚙️ Como Executar o Projeto Localmente
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/gustavoazzola76261-arch/Trabalho_Software-Engineering_EAD.git
-   cd Trabalho_Software-Engineering_EAD
-
-
-Execute o programa:
-
+🧪 Execução e Testes
+▶️ Executar o sistema manualmente
 python app/app.py
 
-
-Para rodar os testes automatizados:
-
+🧩 Executar os testes
 python tests/test_tasks.py
 
-🔄 Integração Contínua (CI)
 
-O repositório usa GitHub Actions para:
+Os testes validam automaticamente:
 
-Configurar o ambiente Python 3.x
+Adição, remoção e edição de tarefas
 
-Rodar os testes unitários automaticamente a cada push
+Marcação como concluída
 
-Validar que o projeto está íntegro e funcionando
+Edição de prioridade
 
-Se o CI passar ✅, o código está estável.
+Persistência correta no arquivo JSON
+
+⚙️ Integração Contínua (CI)
+
+O GitHub Actions realiza automaticamente:
+
+Configuração do ambiente Python 3.x
+
+Execução do arquivo principal (app/app.py)
+
+Rodagem dos testes unitários (test_tasks.py)
+
+Validação da integridade do projeto a cada push
+
+✅ Se todos os testes passam, o build é aprovado.
+❌ Se algum falhar, o Action indica erro para revisão.
+
+🗂️ Planejamento (Kanban no GitHub Projects)
+
+Tarefas planejadas:
+
+ Desenvolver programa principal
+
+ Criar funções CRUD
+
+ Implementar tratamento de erros
+
+ Adicionar loop principal
+
+ Criar feedbacks para o usuário
+
+ Executar e testar programa
+
+ Documentar (README e comentários)
+
+ Criar testes unitários
+
+ Aplicar CI
+
+ Simular mudança de escopo (interface e prioridade)
 
 📈 Próximos Passos
 
-Melhorar a interface do menu (cores, separadores)
+Adicionar opção de buscar tarefas por palavra-chave
 
-Adicionar filtros ou relatórios de tarefas
+Implementar filtro por prioridade ou status
 
-Expandir cobertura de testes para novos cenários
+Melhorar cobertura dos testes automatizados
 
-💡 Autor: Gustavo Azzola
+👨‍💻 Autor
+
+Gustavo Azzola
 📅 Última atualização: Outubro/2025
+📍 Projeto acadêmico — Engenharia de Software
