@@ -17,9 +17,9 @@ def limpar_arquivo():
 # --- Testes ---
 def test_adicionar_tarefa():
     limpar_arquivo()
-    adicionar_tarefa("Tarefa de teste1")
-    adicionar_tarefa("Tarefa de teste2")
-    adicionar_tarefa("Tarefa de teste")
+    adicionar_tarefa("Tarefa de teste1", "Baixa")
+    adicionar_tarefa("Tarefa de teste2","Alta")
+    adicionar_tarefa("Tarefa de teste", "Média")
     tarefas = carregarTarefas()
     descricoes = [t["descricao"] for t in tarefas]
     assert "Tarefa de teste" in descricoes
